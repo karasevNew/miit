@@ -101,11 +101,7 @@ private:
 	*/
 	DLSElement* tail;
 
-	DLS operator= (const DLS& rhs) = delete;
-	DLS operator> (const DLS& rhs) = delete;
-	DLS operator< (const DLS& rhs) = delete;
-	DLS operator>= (const DLS& rhs) = delete;
-	DLS operator<= (const DLS& rhs) = delete;
-	DLS operator!= (const DLS& rhs) = delete;
-	DLS operator== (const DLS& rhs) = delete;
+	DLS(DLS&&) = delete;
+	DLS operator=(DLS const &) = delete;
+	DLS operator=(DLS &&) = delete;
 };

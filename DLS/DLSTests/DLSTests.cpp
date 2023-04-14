@@ -10,13 +10,13 @@ namespace DLSTests
 	{
 	public:
 		
-		TEST_METHOD(DLS_Creation)
+		TEST_METHOD(DefaultCtor_ValidData_Success)
 		{
 			const auto result = new DLS();
 			Assert::IsNotNull(result);
 		}
 
-		TEST_METHOD(DLS_ParamCreation_Size)
+		TEST_METHOD(ListInitializerCtor_ValidData_Success)
 		{
 			const size_t expected = 5;
 			DLS result = { 1, 2, 3, 4, 5 };
