@@ -17,28 +17,28 @@ public:
 	*/
 	DLS(const std::initializer_list<int> values);
 	/**
-	* \brief Деструктор по-умолчанию
+	* \brief Деструктор
 	*/
 	~DLS();
 	/**
 	* \brief Функция добавления элементов
-	* \param pos целое число. Позиция элемента в списке
-	* \param value целое число
+	* \param pos Позиция элемента в списке
+	* \param value Число, которое будем хранить
 	*/
 	void AddElement(const int pos, const int value);
 	/**
 	* \brief Функция добавления элемента в начало
-	* \param value целое число
+	* \param value Число, которое будем хранить
 	*/
 	void AddElementHead(const int value);
 	/**
 	* \brief Функция добавления элемента в конец
-	* \param value целое число
+	* \param value Число, которое будем хранить
 	*/
 	void AddElementTail(const int value);
 	/**
 	* \brief Функция удаления элемента
-	* \param pos целое число. Позиция элемента в списке
+	* \param pos Позиция элемента в списке
 	*/
 	void RemoveElement(int pos);
 	/**
@@ -61,7 +61,7 @@ public:
 
 private:
 	/**
-	* \brief Элементы ДЭК для хранения целых чисел
+	* \brief Элементы двусвязного линейного списка для хранения целых чисел
 	*/
 	class DLSElement
 	{
@@ -90,7 +90,9 @@ private:
 	* \brief размер списка
 	*/
 	size_t size;
-
+	/**
+	* \brief Конструктор копирования 
+	*/
 	DLS(const DLS& rhs);
 	/**
 	* \brief Указатель на голову
@@ -100,8 +102,16 @@ private:
 	* \brief Указатель на хвост
 	*/
 	DLSElement* tail;
-
+	/**
+	* \brief Запрет клонирования
+	*/
 	DLS(DLS&&) = delete;
+	/**
+	* \brief Запрет оператора присваивания
+	*/
 	DLS operator=(DLS const &) = delete;
+	/**
+	* \brief Запрет оператора присваивания перемещением
+	*/
 	DLS operator=(DLS &&) = delete;
 };
