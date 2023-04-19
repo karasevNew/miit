@@ -1,5 +1,6 @@
 ﻿#include "DLS.h"
 #include <stdexcept>
+#include <sstream>
 
 DLS::DLS() : size(0), head(nullptr), tail(nullptr) {}
 
@@ -121,15 +122,18 @@ const int DLS::GetElement(const int pos)
 
 const std::string DLS::ToString()
 {
-	std::string output = "";
+	std::stringstream buffer;
 	auto item = this->head;
 	for (size_t i = 0; i < this->GetSize(); i++)
 	{
-		output += std::to_string(item->value);
-		item = item->next;
-		if (item) output += ", ";
+		buffer << std::to_string(item->value);
+		if (item->next) { 
+			buffer << ", ";
+			item = item->next;
+		}
 	}
-	return output;
+	return buffer.str();
+
 }
 
 const bool DLS::IsEmpty()

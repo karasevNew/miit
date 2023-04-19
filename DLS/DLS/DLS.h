@@ -14,6 +14,7 @@ public:
 	DLS();
 	/**
 	* \brief Создание объекта из последовательности
+	* \param values список чисел для хранения
 	*/
 	DLS(const std::initializer_list<int> values);
 	/**
