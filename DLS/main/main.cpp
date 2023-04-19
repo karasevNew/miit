@@ -32,9 +32,8 @@ int main()
 {
     setlocale(LC_ALL, "Russian");
     cout << "Выберите режим: \n1. Массив \n2. ДЛС\n: ";
-    int work = 2;
-    /*int work;
-    cin >> work;*/
+    int work;
+    cin >> work;
     if (work == 1)
     {
         const int size = setSize();
